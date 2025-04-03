@@ -1,26 +1,29 @@
-package chapter12;
+package chapter12.chapter12;
 
-import java.util.Scanner; 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
-public class ReadData {
-  public static void main(String[] args) throws Exception {
-    // Create a File instance
-    java.io.File file = new java.io.File("scores.txt");
+public class ReadData
+{
+  public static void main(String[] args) throws FileNotFoundException
+  {
+    File file1 = new File("score5.txt");
+    try
+    {
+      Scanner input = new Scanner(file1);
+      while (input.hasNext())
+      {
+        String firstName = input.next();
+        String lastName = input.next();
+        String iq = input.next();
+        System.out.println(firstName + " " + lastName + " " + iq);
+      }
 
-    // Create a Scanner for the file
-    Scanner input = new Scanner(file);
-
-    // Read data from a file
-    while (input.hasNext()) {
-      String firstName = input.next();
-      String mi = input.next();
-      String lastName = input.next();
-      int score = input.nextInt();
-      System.out.println(
-        firstName + " " + mi + " " + lastName + " " + score);
     }
-
-    // Close the file
-    input.close();
+    catch (FileNotFoundException e)
+    {
+      System.out.print("you bloody moron THE FILE'S SUPPOSED TO BE RIGHT HERE");
+    }
   }
 }

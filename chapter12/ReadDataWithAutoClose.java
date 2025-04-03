@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ReadDataWithAutoClose {
   public static void main(String[] args) throws Exception {
     // Create a File instance
-    java.io.File file = new java.io.File("scores.txt");
+    java.io.File file = new java.io.File("scoresBad.txt");
 
     try (
       // Create a Scanner for the file
